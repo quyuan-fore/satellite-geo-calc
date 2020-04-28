@@ -1,0 +1,29 @@
+{
+  "name": "satellite-geo-calc",
+  "version": "0.0.1",
+  "description": "A js tool for satellite, geography and transformation around llh, mercator ,enu and others.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies":{
+    "numeric": "^1.2.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quyuan-fore/satellite-geo-calc.git"
+  },
+  "keywords": [
+    "satellite",
+    "geo",
+    "lla",
+    "enu",
+    "mercator"
+  ],
+  "author": "quyuan-fore",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quyuan-fore/satellite-geo-calc/issues"
+  },
+  "homepage": "https://github.com/quyuan-fore/satellite-geo-calc#readme"
+}
