@@ -1,6 +1,6 @@
 {
   "name": "satellite-geo-calc",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A js tool for satellite, geography and transformation around llh, mercator ,enu and others.",
   "main": "dist/bundle.js",
   "scripts": {
