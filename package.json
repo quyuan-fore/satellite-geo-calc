@@ -2,7 +2,7 @@
   "name": "satellite-geo-calc",
   "version": "0.0.4",
   "description": "A js tool for satellite, geography and transformation around llh, mercator ,enu and others.",
-  "main": "index.js",
+  "main": "dist/bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c ./rollup.config.js"
