@@ -12,6 +12,9 @@ function ll_to_mercator(ll){
     mercator.y = earthRad / 2 * Math.log((1.0 + Math.sin(tem)) / (1.0 - Math.sin(tem)))
     return mercator
 }
-module.exports = {
+// module.exports = {
+//     ll_to_mercator
+// }
+export default {
     ll_to_mercator
 }

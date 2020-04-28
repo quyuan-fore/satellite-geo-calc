@@ -42,6 +42,10 @@ function _calc(arr) {
     }
 }
 
-module.exports = {
+// module.exports = {
+//     calc_dop:_calc
+// }
+
+export default {
     calc_dop:_calc
 }

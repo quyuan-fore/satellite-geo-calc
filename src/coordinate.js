@@ -219,7 +219,16 @@ function lla_to_enu(lla,lla_ref){
     return ecef_to_enu(ecef,lla_ref)
 }
 
-module.exports = {
+// module.exports = {
+//     lla_to_ecef,
+//     ecef_to_lla,
+//     enu_to_ecef,
+//     enu_to_lla,
+//     ecef_to_enu,
+//     lla_to_enu
+// }
+
+export default {
     lla_to_ecef,
     ecef_to_lla,
     enu_to_ecef,

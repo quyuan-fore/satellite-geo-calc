@@ -47,7 +47,11 @@ function u2wOrigin(timestrap) {
     }
 }
 
-module.exports = {
+// module.exports = {
+//     u2w:u2wOrigin,
+//     w2u:w2uOrigin
+// }
+export default {
     u2w:u2wOrigin,
     w2u:w2uOrigin
 }
