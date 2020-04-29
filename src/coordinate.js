@@ -53,11 +53,10 @@ function ecef_to_lla(ecef){
     let {x,y,z} = ecef
     x = Number(x)
     y = Number(y)
-    z = Number(y)
+    z = Number(z)
     let x2 = x*x
     let y2 = y*y
     let z2 = z*z
-
     let e = Math.sqrt(1-(b/a)**2)
     let b2 = b*b
     let e2 = e*e
@@ -80,7 +79,6 @@ function ecef_to_lla(ecef){
     let height = U*( 1 - b2/(a*V) )
 
     let lat = Math.atan( (z + ep*ep*zo)/r )
-
     let temp = Math.atan(y/x)
     let long
     if(x>=0){
@@ -155,7 +153,7 @@ function enu_to_ecef(enu,lla_ref){
     {lon:<Number>,lat:<Number>,alt:<Number>}
 */
 function enu_to_lla(enu,lla_ref){
-    let tem = lla_to_ecef(enu,lla_ref)
+    let tem = enu_to_ecef(enu,lla_ref)
     return ecef_to_lla(tem)
 }
 
@@ -218,15 +216,6 @@ function lla_to_enu(lla,lla_ref){
     let ecef = lla_to_ecef(lla)
     return ecef_to_enu(ecef,lla_ref)
 }
-
-// module.exports = {
-//     lla_to_ecef,
-//     ecef_to_lla,
-//     enu_to_ecef,
-//     enu_to_lla,
-//     ecef_to_enu,
-//     lla_to_enu
-// }
 
 export default {
     lla_to_ecef,

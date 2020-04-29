@@ -63,7 +63,7 @@
           z = ecef.z;
       x = Number(x);
       y = Number(y);
-      z = Number(y);
+      z = Number(z);
       var x2 = x * x;
       var y2 = y * y;
       var z2 = z * z;
@@ -160,7 +160,7 @@
 
 
     function enu_to_lla(enu, lla_ref) {
-      var tem = lla_to_ecef(enu);
+      var tem = enu_to_ecef(enu, lla_ref);
       return ecef_to_lla(tem);
     }
     /*
@@ -217,15 +217,7 @@
     function lla_to_enu(lla, lla_ref) {
       var ecef = lla_to_ecef(lla);
       return ecef_to_enu(ecef, lla_ref);
-    } // module.exports = {
-    //     lla_to_ecef,
-    //     ecef_to_lla,
-    //     enu_to_ecef,
-    //     enu_to_lla,
-    //     ecef_to_enu,
-    //     lla_to_enu
-    // }
-
+    }
 
     var coordinateTransfer = {
       lla_to_ecef: lla_to_ecef,
@@ -4738,15 +4730,16 @@
       return value / 1000;
     });
     /*
-        wn
-        <String> or <Number> , gps week
-        tow
-        <String> or <Number> , second in a gps week ,周内秒
+        { wn:<Number>, tow:<Number> }
+        wn, gps week
+        tow, second in a gps week, 周内秒
         result
         time , a unix timestrap, 10bits, like 1588063179
     */
 
-    function w2uOrigin(wn, tow) {
+    function w2uOrigin(param) {
+      var wn = param.wn;
+      var tow = param.tow;
       var gpst = Number(wn) * 7 * 24 * 60 * 60 + Number(tow);
       var n = 0;
       gpsLeapS.forEach(function (value) {

@@ -1,8 +1,9 @@
 # satellite-geo-calc
 
-English | [简体中文](./README-zh.md)
 
 > 这是一个用于卫星定位相关计算的工具，主要提供空间坐标转换、dop计算、GPS时间转换、墨卡托投影坐标转换等功能；也可以作为相关功能的参考。
+
+> 请从v0.0.7版本开始使用。
 
 ## Installation
 
@@ -47,19 +48,40 @@ satellite_geo_calc.coordinateTransfer.ecef_to_lla(
 
 3. enu to ecef
 @param1 { x:<Number>, y:<Number>, z:<Number> }
-@param2 { lon:<Number>, lat:<Number>, alt:<Number> } 参照点lla
+@param2 { lon:<Number>, lat:<Number>, alt:<Number> } reference point lla
+satellite_geo_calc.coordinateTransfer.enu_to_ecef(
+    {x: 6144810.141746415, y: 1676013.2245262354, z: -5949873.651021555},
+    { lat: 39.916527, lon: 116.391389, alt: 46 }
+)
+// output {x: -5175375.166225361, y: -3394416.3352002986, z: 1538518.83548673}
 
 4. enu to lla
 @param1 { x:<Number>, y:<Number>, z:<Number> }
-@param2 { lon:<Number>, lat:<Number>, alt:<Number> } 参照点lla
+@param2 { lon:<Number>, lat:<Number>, alt:<Number> } reference point lla
+satellite_geo_calc.coordinateTransfer.enu_to_lla(
+    {x: 6144810.141746415, y: 1676013.2245262354, z: -5949873.651021555},
+    { lat: 39.916527, lon: 116.391389, alt: 46 }
+)
+// output {lon: -146.74, lat: 14.050000000000002, alt: 699.9999999998037}
 
 5. ecef to enu
 @param1 { x:<Number>, y:<Number>, z:<Number> }
-@param2 { lon:<Number>, lat:<Number>, alt:<Number> } 参照点lla
+@param2 { lon:<Number>, lat:<Number>, alt:<Number> } reference point lla
+satellite_geo_calc.coordinateTransfer.ecef_to_enu(
+    {x: -5175375.166225361, y: -3394416.335200299, z: 1538518.8354867299},
+    { lat: 39.916527, lon: 116.391389, alt: 46 }
+)
+// output {x: 6144810.141746415, y: 1676013.2245262354, z: -5949873.651021555}
 
 6. lla to enu
 @param1 { lon:<Number>, lat:<Number>, alt:<Number> }
-@param2 { lon:<Number>, lat:<Number>, alt:<Number> } 参照点lla
+@param2 { lon:<Number>, lat:<Number>, alt:<Number> } reference point lla
+satellite_geo_calc.coordinateTransfer.lla_to_enu(
+    { lon:-146.74, lat:14.05,alt:700},
+    { lat: 39.916527, lon: 116.391389, alt: 46 }
+)
+// output {x: 6144810.141746415, y: 1676013.2245262354, z: -5949873.651021555}
+
 ```
 
 ### 墨卡托坐标转换

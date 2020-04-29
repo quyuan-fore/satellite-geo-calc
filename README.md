@@ -4,6 +4,8 @@ English | [简体中文](./README-zh.md)
 
 > This is a tool for satellite positioning related calculations. It mainly provides functions such as space coordinate conversion, dop calculation, GPS time conversion, and Mercator projection coordinate conversion. It can also be used as a reference for related functions.
 
+> Please use from v0.0.7
+
 ## Installation
 
 ```bash
@@ -48,18 +50,39 @@ satellite_geo_calc.coordinateTransfer.ecef_to_lla(
 3. enu to ecef
 @param1 { x:<Number>, y:<Number>, z:<Number> }
 @param2 { lon:<Number>, lat:<Number>, alt:<Number> } reference point lla
+satellite_geo_calc.coordinateTransfer.enu_to_ecef(
+    {x: 6144810.141746415, y: 1676013.2245262354, z: -5949873.651021555},
+    { lat: 39.916527, lon: 116.391389, alt: 46 }
+)
+// output {x: -5175375.166225361, y: -3394416.3352002986, z: 1538518.83548673}
 
 4. enu to lla
 @param1 { x:<Number>, y:<Number>, z:<Number> }
 @param2 { lon:<Number>, lat:<Number>, alt:<Number> } reference point lla
+satellite_geo_calc.coordinateTransfer.enu_to_lla(
+    {x: 6144810.141746415, y: 1676013.2245262354, z: -5949873.651021555},
+    { lat: 39.916527, lon: 116.391389, alt: 46 }
+)
+// output {lon: -146.74, lat: 14.050000000000002, alt: 699.9999999998037}
 
 5. ecef to enu
 @param1 { x:<Number>, y:<Number>, z:<Number> }
 @param2 { lon:<Number>, lat:<Number>, alt:<Number> } reference point lla
+satellite_geo_calc.coordinateTransfer.ecef_to_enu(
+    {x: -5175375.166225361, y: -3394416.335200299, z: 1538518.8354867299},
+    { lat: 39.916527, lon: 116.391389, alt: 46 }
+)
+// output {x: 6144810.141746415, y: 1676013.2245262354, z: -5949873.651021555}
 
 6. lla to enu
 @param1 { lon:<Number>, lat:<Number>, alt:<Number> }
 @param2 { lon:<Number>, lat:<Number>, alt:<Number> } reference point lla
+satellite_geo_calc.coordinateTransfer.lla_to_enu(
+    { lon:-146.74, lat:14.05,alt:700},
+    { lat: 39.916527, lon: 116.391389, alt: 46 }
+)
+// output {x: 6144810.141746415, y: 1676013.2245262354, z: -5949873.651021555}
+
 ```
 
 ### Mercator projection coordinate conversion
