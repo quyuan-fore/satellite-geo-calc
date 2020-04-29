@@ -8,12 +8,19 @@
     "build": "rollup -c ./rollup.config.js"
   },
   "dependencies": {
+    "@babel/runtime": "^7.9.2",
+    "@babel/runtime-corejs2": "^7.9.2",
     "numeric": "^1.2.6",
-    "rollup": "^2.7.3",
-    "rollup-plugin-postcss": "^3.1.1"
+    "rollup": "^2.7.3"
   },
   "devDependencies": {
-    "cross-env": "^7.0.2"
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "cross-env": "^7.0.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0"
   },
   "repository": {
     "type": "git",

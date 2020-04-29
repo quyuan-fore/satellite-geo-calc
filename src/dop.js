@@ -1,4 +1,5 @@
-const numeric = require('numeric')
+// const numeric = require('numeric')
+import numeric from 'numeric'
 /*
     params
     arr, array with satellite's az and el
