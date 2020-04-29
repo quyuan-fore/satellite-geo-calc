@@ -7,14 +7,15 @@ const gpsLeapMS = [
 const gpsLeapS = gpsLeapMS.map((value) => { return value / 1000 })
 
 /*
-    wn
-    <String> or <Number> , gps week
-    tow
-    <String> or <Number> , second in a gps week ,周内秒
+    { wn:<Number>, tow:<Number> }
+    wn, gps week
+    tow, second in a gps week, 周内秒
     result
     time , a unix timestrap, 10bits, like 1588063179
 */
-function w2uOrigin(wn, tow) {
+function w2uOrigin(param) {
+    let wn = param.wn
+    let tow = param.tow
     const gpst = Number(wn) * 7 * 24 * 60 * 60 + Number(tow)
     let n = 0
     gpsLeapS.forEach((value) => {
